@@ -42,7 +42,7 @@ public static class YarpTransformExtensions
             }
 
             // This is where the magic happens; the placeholder is replaced with the real value
-            var replacedContent = requestBody.Replace("%TEMP%", connectionString);
+            var replacedContent = requestBody.Replace("TEMPINSTRUMENTATIONKEY", connectionString);
 
             // Set the new requestBody in the HTTP Request and recalculate the conten-length.
             httpContext.Request.Body = new MemoryStream(Encoding.UTF8.GetBytes(replacedContent));
